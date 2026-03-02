@@ -7,9 +7,10 @@
 Linux用户可以使用Crontab实现开启自启动并维持检测
 
 效果：
+
 zeroiser@raspberrypi:~ $ crontab -l
-# 每一小时的第5分钟，执行校园网登录脚本，并将输出日志记录到 login.log 文件
+\# 每一小时的第5分钟，执行校园网登录脚本，并将输出日志记录到 login.log 文件
 5 * * * * /home/zeroiser/upc_wifi/upc_login.py >> /home/zeroiser/upc_wifi/login.log 2>&1
 
-# 系统每次启动时，延迟1分钟后执行一次登录脚本，确保网络已准备就绪
+\# 系统每次启动时，延迟1分钟后执行一次登录脚本，确保网络已准备就绪
 @reboot sleep 30 && /home/zeroiser/upc_wifi/upc_login.py >> /home/zeroiser/upc_wifi/login.log 2>&1
